@@ -21,13 +21,13 @@ public class Musician {
         return false;
     }
 
-    public boolean canPlayInstrument(Instrument instrumentSearch){
-        int indexInstrument = instrumentSearch.ordinal(); //ini tuh buat dapetin index dari enumnya gitu dia alat musik mana
+    // public boolean canPlayInstrument(Instrument instrumentSearch){
+    //     int indexInstrument = instrumentSearch.ordinal(); //ini tuh buat dapetin index dari enumnya gitu dia alat musik mana
 
-        //buat dapetin si instrumentnya
-        if (indexInstrument >=0 && indexInstrument < instrument.size()) {
-            return instrument.get(indexInstrument);
-        }
-        return false;
-    }
+    //     //buat dapetin si instrumentnya
+    //     if (indexInstrument >=0 && indexInstrument < instrument.size()) {
+    //         return instrument.get(indexInstrument);
+    //     }
+    //     return false;
+    // }
 }

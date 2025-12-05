@@ -1,6 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
+class Edge{
+    public int source;
+    public int destination;
+    public boolean weight;
+
+    public Edge(int source, int destination, boolean weight){
+        this.source = source;
+        this.destination = destination;
+        this.weight = weight;
+    }
+}
 public class DnCMusicScheduler {
     private static Instrument[] INSTRUMENTS_NEEDED = {
         Instrument.PIANO,
@@ -12,9 +23,19 @@ public class DnCMusicScheduler {
     private static final int WEEKS_IN_MONTH = 4;
     private int solutionCount = 0;
     private List<Musician> allMusicians;
+    private List<Edge> edges;
+    private int parents[];
+    
 
     public DnCMusicScheduler(List<Musician> musicians){
         this.allMusicians = musicians;
+    }
+
+    int findRootParent(int index){
+        while (parents[index] != index) {
+            index = parents[index];
+        }
+        return index;
     }
 
     public void generateSchedules(){
